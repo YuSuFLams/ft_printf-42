@@ -1,3 +1,3 @@
 # ft_printf-42
 
-This is My second Project in 1337
+This was my second project as a 42 student in khouribga. Looking forward to the new projects coming next!

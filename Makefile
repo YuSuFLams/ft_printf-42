@@ -37,7 +37,7 @@ $(NAME):$(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 %.o:%.c ft_printf.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $<
 
 clean:
 	$(RM) $(OBJS)

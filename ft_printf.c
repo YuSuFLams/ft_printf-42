@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int	check(char c, va_list args, int *len)
+static void	check(char c, va_list args, int *len)
 {
 	if (c == 'c')
 		ft_putchar(va_arg(args, int), len);
@@ -31,8 +31,7 @@ static int	check(char c, va_list args, int *len)
 	else if (c == '%')
 		ft_putchar('%', len);
 	else
-		return (1);
-	return (0);
+		ft_putchar(c, len);
 }
 
 int	ft_printf(const char *str, ...)
@@ -42,7 +41,7 @@ int	ft_printf(const char *str, ...)
 
 	va_start(args, str);
 	i = 0;
-	if (write(1, 0, 0) == -1)
+	if (write(1, 0, 0))
 		return (-1);
 	while (*str)
 	{
@@ -51,8 +50,7 @@ int	ft_printf(const char *str, ...)
 		else
 		{
 			str++;
-			if (check(*str, args, &i))
-				continue ;
+			check(*str, args, &i);
 		}
 		str++;
 	}
